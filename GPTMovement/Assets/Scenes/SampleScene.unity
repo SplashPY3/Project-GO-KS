@@ -1363,7 +1363,8 @@ MonoBehaviour:
   fpsCam: {fileID: 963194227}
   muzzleFlash: {fileID: 1229787566}
   impactEffect: {fileID: 8647760375167043907, guid: 4f11e41519dd57345a2377037f3ad920, type: 3}
-  impactEffectWall: {fileID: 4141808933458294672, guid: e1ce799d095a5d847b1b0402cb55f4ee, type: 3}
+  impactEffectWall: {fileID: 130116669007968357, guid: 628b3cd1288e5d949884c13fac111704, type: 3}
+  impactBH: {fileID: 4141808933458294672, guid: e1ce799d095a5d847b1b0402cb55f4ee, type: 3}
   shotSFX: {fileID: 8300000, guid: a32610ba0cdd51d40b30aaa35babbf2b, type: 3}
   _audioSource: {fileID: 661845763}
   maxAmmo: 30

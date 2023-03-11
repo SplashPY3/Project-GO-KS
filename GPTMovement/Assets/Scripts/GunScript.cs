@@ -13,6 +13,7 @@ public class GunScript : MonoBehaviour
     public ParticleSystem muzzleFlash;
     public GameObject impactEffect;
     public GameObject impactEffectWall;
+    public GameObject impactBH;
 
     public AudioClip shotSFX;
     public AudioSource _audioSource;
@@ -90,8 +91,11 @@ public class GunScript : MonoBehaviour
             else
             {
                 GameObject impactWallGO = Instantiate(impactEffectWall, hit.point, Quaternion.LookRotation(hit.normal));
-                impactWallGO.transform.position += impactWallGO.transform.forward / 1000;
-                Destroy(impactWallGO, 10f);
+                Destroy(impactWallGO, 2f);
+
+                GameObject impactBHGO = Instantiate(impactBH, hit.point, Quaternion.LookRotation(hit.normal));
+                impactBHGO.transform.position += impactBHGO.transform.forward / 1000;
+                Destroy(impactBHGO, 10f);
             }
         }
     }
