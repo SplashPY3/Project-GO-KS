@@ -27,6 +27,11 @@ public class GunScript : MonoBehaviour
 
     public AmmoUI ammoUI;
 
+    //private GameObject[] bulletList;
+    //public int number;
+
+    //bool fixedSize;
+
     void Start()
     {
         currentAmmo = maxAmmo;
@@ -50,15 +55,37 @@ public class GunScript : MonoBehaviour
 
         if (Input.GetMouseButton(0) && Time.time >= nextTimeToFire)
         {
-            nextTimeToFire = Time.time + 1f/fireRate;
+            nextTimeToFire = Time.time + 1f / fireRate;
             Shoot();
             currentAmmo--;
             ammoUI.showAmmo(1);
         }
 
+        //bulletList = GameObject.FindGameObjectsWithTag("Bullet Hole");
+
+        //fixedSize = bulletList.IsFixedSize; // checking if the problem is in the array itself
+
+        //int length = bulletList.Length; // getting the array length
+
+        //if (fixedSize)
+        //{
+        //    Debug.Log("YEs");
+        //    Debug.Log(length);
+        //}
+
+        //else
+        //{
+        //    Debug.Log("No");
+        //}
+
+        //for (int i = 0; i < length; i++)
+        //{
+        //    Debug.Log(bulletList[i]); // add this part and ones above to the shooting function
+        //}
+
     }
 
-    void Shoot ()
+    void Shoot()
     {
         _audioSource.PlayOneShot(shotSFX);
 
@@ -77,7 +104,7 @@ public class GunScript : MonoBehaviour
                 target.TakeDamage(damage);
             }
 
-            if(hit.rigidbody != null)
+            if (hit.rigidbody != null)
             {
                 hit.rigidbody.AddForce(-hit.normal * impactForce);
             }

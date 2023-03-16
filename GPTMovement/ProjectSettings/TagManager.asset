@@ -7,6 +7,7 @@ TagManager:
   - Ground
   - AmmoUI
   - Enemy
+  - Bullet Hole
   layers:
   - Default
   - TransparentFX
